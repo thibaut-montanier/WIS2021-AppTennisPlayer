@@ -1,2 +1,6 @@
+<label>
+	<input placeholder="Nom du joueur" [(ngModel)]="player.playerName">
+</label>
 <p>Nom du joueur : {{player.playerName}} </p>
 <p>Nom du joueur : {{player.playerCls}} </p>
+<input (click)="onclick()" type="button" value="Change le nom">

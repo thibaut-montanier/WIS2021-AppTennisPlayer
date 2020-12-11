@@ -21,4 +21,8 @@ export class TennisPlayerComponent implements OnInit {
 
   }
 
+  public onclick(){
+    this.player.playerName="toto";
+  }
+
 }
