@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TennisPlayer } from '../Model/tennis-player';
 
 @Component({
   selector: 'app-tennis-player',
@@ -7,12 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TennisPlayerComponent implements OnInit {
 
-  public playerName : string = "Nadal";
-  public playerCls : number = 1;
+  public player: TennisPlayer = {
+    playerName:"Sampras",
+    playerCls:1
+  }
 
   constructor() { }
 
   ngOnInit(): void {
+
+    this.player.playerCls=3;
+
   }
 
 }
