@@ -1,4 +1,9 @@
 export class TennisPlayer {
-	public playerName : string = "";
-  public playerCls : number = 1;
+
+	public id : number = 0;
+	public lastName : string = "";
+	public firstName : string = "";
+	public birthDate : string ="";
+	public prizeList  : string[] = [];
+
 }

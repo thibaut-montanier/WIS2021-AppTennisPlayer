@@ -8,21 +8,29 @@ import { TennisPlayer } from '../Model/tennis-player';
 })
 export class TennisPlayerComponent implements OnInit {
 
-  public player: TennisPlayer = {
-    playerName:"Sampras",
-    playerCls:1
-  }
+
+
+  public players : TennisPlayer[]=[
+    {id: 1, lastName: "Sampras", firstName: "Pete", birthDate:"1971/08/12", prizeList:["Open d'Australie"]},
+    {id: 2, lastName: "Forget", firstName: "Guy", birthDate:"1965/01/04", prizeList:[] }, 
+    {id: 3,lastName: "Courier",firstName: "Jim",birthDate:"1970/08/17", prizeList:["Roland-Garros", "Open d'Australie"]}
+    ];
+
+    
+    
+  public player: TennisPlayer = {id: 1, lastName: "Federer", firstName: "Pete", birthDate:"1971/08/12", prizeList:["Open d'Australie"]}
+  public player2: TennisPlayer = {id: 1, lastName: "Nadal", firstName: "Pete", birthDate:"1971/08/12", prizeList:["Open d'Australie"]}
 
   constructor() { }
 
   ngOnInit(): void {
 
-    this.player.playerCls=3;
+    
 
   }
 
   public onclick(){
-    this.player.playerName="toto";
+    this.player.firstName="toto";
   }
 
 }
