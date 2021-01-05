@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TennisPlayerComponent } from './tennis-player/tennis-player.component';
 import { FormsModule } from '@angular/forms';
+import { PlayerDetailComponent } from './player-detail/player-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TennisPlayerComponent
+    TennisPlayerComponent,
+    PlayerDetailComponent
   ],
   imports: [
     BrowserModule,
