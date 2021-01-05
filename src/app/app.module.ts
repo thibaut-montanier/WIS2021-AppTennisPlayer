@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { TennisPlayerComponent } from './tennis-player/tennis-player.component';
 import { FormsModule } from '@angular/forms';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
+import { PlayerFormComponent } from './player-form/player-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TennisPlayerComponent,
-    PlayerDetailComponent
+    PlayerDetailComponent,
+    PlayerFormComponent
   ],
   imports: [
     BrowserModule,
