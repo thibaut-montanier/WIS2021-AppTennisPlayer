@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TennisPlayer } from '../Model/tennis-player';
+import { TennisPlayersService } from '../service/tennis-players.service';
 
 @Component({
   selector: 'app-player-form',
@@ -10,7 +11,7 @@ export class PlayerFormComponent implements OnInit {
 
 
   @Input() public currentModifiedPlayer : TennisPlayer;
-  constructor() { }
+  constructor(private playersSrv : TennisPlayersService) { }
 
   ngOnInit(): void {
   }

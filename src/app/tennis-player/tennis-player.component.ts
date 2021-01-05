@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TennisPlayer } from '../Model/tennis-player';
+import { TennisPlayersService } from '../service/tennis-players.service';
 
 @Component({
   selector: 'app-tennis-player',
@@ -10,11 +11,7 @@ export class TennisPlayerComponent implements OnInit {
 
   // propriétés du composants
   public isInAddingMode = false;
-  public players : TennisPlayer[]=[
-    {id: 1, lastName: "Sampras", firstName: "Pete", birthDate:"1971/08/12", prizeList:["Open d'Australie"]},
-    {id: 2, lastName: "Forget", firstName: "Guy", birthDate:"1965/01/04", prizeList:[] }, 
-    {id: 3,lastName: "Courier",firstName: "Jim",birthDate:"1970/08/17", prizeList:["Roland-Garros", "Open d'Australie"]}
-    ];
+  public players : TennisPlayer[];
 
     
     
@@ -22,7 +19,10 @@ export class TennisPlayerComponent implements OnInit {
   
 
   // méthodes et fonctions
-  constructor() { }
+  constructor(private playersSrv : TennisPlayersService) {
+    debugger;
+      this.players = playersSrv.players;
+   }
 
   ngOnInit(): void {
   }
@@ -42,7 +42,9 @@ export class TennisPlayerComponent implements OnInit {
   }
 
   public Valider(){
-    this.players.push(this.player);
+    debugger;
+    this.playersSrv.addPlayer(this.player);
+    //this.players.push(this.player);
     this.isInAddingMode = false;
   }
 
