@@ -8,6 +8,7 @@ import { TennisPlayer } from '../Model/tennis-player';
 })
 export class TennisPlayerComponent implements OnInit {
 
+  public isInAddingMode = false;
   public players : TennisPlayer[]=[
     {id: 1, lastName: "Sampras", firstName: "Pete", birthDate:"1971/08/12", prizeList:["Open d'Australie"]},
     {id: 2, lastName: "Forget", firstName: "Guy", birthDate:"1965/01/04", prizeList:[] }, 
@@ -16,7 +17,7 @@ export class TennisPlayerComponent implements OnInit {
 
     
     
-  public player: TennisPlayer = {id: 1, lastName: "Federer", firstName: "Pete", birthDate:"1971/08/12", prizeList:["Open d'Australie"]}
+  public player: TennisPlayer = {id: 1, lastName: "Federer", firstName: "Pete", birthDate:"1971/08/12", prizeList:['Open d\'Australie']}
   
   constructor() { }
 
@@ -34,9 +35,13 @@ export class TennisPlayerComponent implements OnInit {
 
 
   public Ajouter(){
+    this.isInAddingMode =true;
     this.player = new TennisPlayer();
-    debugger;
   }
 
+  public Valider(){
+    this.players.push(this.player);
+    this.isInAddingMode = false;
+  }
 
 }

@@ -11,5 +11,6 @@
 <p>Nom du joueur : {{player.lastName}}</p>
 <div>
 	<input (click)="onclick()" type="button" value="Change le nom">
-	<input (click)="Ajouter()" type="button" value="Ajout d'un joueur" >
+	<input (click)="Ajouter()" type="button" value="Ajout d'un joueur"  *ngIf="!isInAddingMode">
+	<input (click)="Valider()" type="button" value="Valider" *ngIf="isInAddingMode">
 </div>
