@@ -1,12 +1,15 @@
 
 <ul>
-	<li *ngFor="let pl of players">Mon joueur 1 : {{pl.lastName}}</li>
+	<li *ngFor="let pl of players" (click)="selectPlayer(pl)">Mon joueur : {{pl.lastName}}</li>
 	<!-- {​​% for user in users %}​​<li>{​​{​​ user.username|e }​​}​​</li>{​​% endfor %}​​ -->
 </ul>
 
 <label>
-	<input placeholder="Nom du joueur" [(ngModel)]="player.lastName">
+	<input placeholder="Nom du joueur" [(ngModel)]="player.lastName"><br>
+	<input placeholder="Prénom du joueur" [(ngModel)]="player.firstName">
 </label>
-<p>Nom du joueur : {{player.lastName}} </p>
-<p>Prénom du joueur : {{player.firstName}} </p>
-<input (click)="onclick()" type="button" value="Change le nom">
+<p>Nom du joueur : {{player.lastName}}</p>
+<div>
+	<input (click)="onclick()" type="button" value="Change le nom">
+	<input (click)="Ajouter()" type="button" value="Ajout d'un joueur" >
+</div>

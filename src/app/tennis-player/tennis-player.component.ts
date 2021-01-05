@@ -8,8 +8,6 @@ import { TennisPlayer } from '../Model/tennis-player';
 })
 export class TennisPlayerComponent implements OnInit {
 
-
-
   public players : TennisPlayer[]=[
     {id: 1, lastName: "Sampras", firstName: "Pete", birthDate:"1971/08/12", prizeList:["Open d'Australie"]},
     {id: 2, lastName: "Forget", firstName: "Guy", birthDate:"1965/01/04", prizeList:[] }, 
@@ -19,18 +17,26 @@ export class TennisPlayerComponent implements OnInit {
     
     
   public player: TennisPlayer = {id: 1, lastName: "Federer", firstName: "Pete", birthDate:"1971/08/12", prizeList:["Open d'Australie"]}
-  public player2: TennisPlayer = {id: 1, lastName: "Nadal", firstName: "Pete", birthDate:"1971/08/12", prizeList:["Open d'Australie"]}
-
+  
   constructor() { }
 
   ngOnInit(): void {
-
-    
-
   }
 
-  public onclick(){
+  public selectPlayer(activePlayer: TennisPlayer){
+    debugger
+    this.player =activePlayer;
+  }
+
+  public onclick() {
     this.player.firstName="toto";
   }
+
+
+  public Ajouter(){
+    this.player = new TennisPlayer();
+    debugger;
+  }
+
 
 }
