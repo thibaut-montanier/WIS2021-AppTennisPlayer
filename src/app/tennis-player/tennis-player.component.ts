@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TennisPlayer } from '../Model/tennis-player';
 import { TennisPlayersService } from '../service/tennis-players.service';
 
@@ -19,8 +20,7 @@ export class TennisPlayerComponent implements OnInit {
   
 
   // méthodes et fonctions
-  constructor(private playersSrv : TennisPlayersService) {
-    debugger;
+  constructor(private playersSrv : TennisPlayersService, private _router: Router) {
       this.players = playersSrv.players;
    }
 
@@ -28,6 +28,7 @@ export class TennisPlayerComponent implements OnInit {
   }
 
   public selectPlayer(activePlayer: TennisPlayer){
+    
     this.player =activePlayer;
   }
 
@@ -37,8 +38,9 @@ export class TennisPlayerComponent implements OnInit {
 
 
   public Ajouter(){
-    this.isInAddingMode =true;
-    this.player = new TennisPlayer();
+    this._router.navigateByUrl('/add-player');
+    // this.isInAddingMode =true;
+    // this.player = new TennisPlayer();
   }
 
   public Valider(){
@@ -47,6 +49,10 @@ export class TennisPlayerComponent implements OnInit {
 
   public formHasFinished(){
     this.isInAddingMode=false;
+  }
+
+  public AfficherDetail(){
+    this._router.navigateByUrl('/player-detail/' + this.player.id);
   }
 
 }

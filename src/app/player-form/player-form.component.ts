@@ -10,9 +10,9 @@ import { TennisPlayersService } from '../service/tennis-players.service';
 export class PlayerFormComponent implements OnInit {
 
 
-  @Input() public currentModifiedPlayer : TennisPlayer;
+  @Input() public currentModifiedPlayer : TennisPlayer = new TennisPlayer();
 
-  @Input() public isInAddingMode : boolean;
+  @Input() public isInAddingMode : boolean = true;
 
   @Output() public jobFinished = new EventEmitter<boolean>()
 

@@ -18,6 +18,15 @@ export class TennisPlayersService {
 
 
   public addPlayer(pl: TennisPlayer){
+    // recherche de l'identifiant le plus élevé dans le tableau
+    // pour créer un nouvel identifiant à notre joueur
+    pl.id =  Math.max(...this.players.map(p=>p.id))+1;
     this.players.push(pl);
+  }
+
+
+  public getPlayerById(id: number){
+    // recherche du joueur par son identifiant
+    return this.players.find((p)=> p.id == id);
   }
 }

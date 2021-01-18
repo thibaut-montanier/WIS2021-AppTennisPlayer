@@ -1,2 +1,3 @@
 <p>Détail du joueur</p>
-<p>Nom du joueur : {{activePlayer.lastName}}</p>
+<p>id du joueur : {{playerId}}</p>
+<p *ngIf="activePlayer != null">Nom du joueur : {{activePlayer.lastName}}</p>
