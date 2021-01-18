@@ -42,9 +42,6 @@ export class TennisPlayerComponent implements OnInit {
   }
 
   public Valider(){
-    debugger;
-    this.playersSrv.addPlayer(this.player);
-    //this.players.push(this.player);
     this.isInAddingMode = false;
   }
 

@@ -3,5 +3,7 @@
 	<input placeholder="Nom du joueur" [(ngModel)]="currentModifiedPlayer.lastName"><br>
 	<input placeholder="Prénom du joueur" [(ngModel)]="currentModifiedPlayer.firstName">
 </label>
-
-<input type="button" (click)="onCancel()" value="Cancel">
+<div>
+	<input (click)="onCancel()"type="button"  value="Annuler" *ngIf="isInAddingMode">
+	<input (click)="onSubmit()" type="button" value="Valider" *ngIf="isInAddingMode">
+</div>
