@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { TennisPlayer } from '../Model/tennis-player';
 import { TennisPlayersService } from '../service/tennis-players.service';
 
@@ -11,9 +11,15 @@ export class PlayerFormComponent implements OnInit {
 
 
   @Input() public currentModifiedPlayer : TennisPlayer;
+
+  @Output() public jobFinished = new EventEmitter<boolean>()
   constructor(private playersSrv : TennisPlayersService) { }
 
   ngOnInit(): void {
+  }
+
+  onCancel(){
+    this.jobFinished.emit(true);
   }
 
 }

@@ -48,4 +48,8 @@ export class TennisPlayerComponent implements OnInit {
     this.isInAddingMode = false;
   }
 
+  public formHasFinished(){
+    this.isInAddingMode=false;
+  }
+
 }
