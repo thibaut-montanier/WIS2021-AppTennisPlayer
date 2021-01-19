@@ -9,7 +9,7 @@
 <app-player-detail [activePlayer]="player"></app-player-detail>
 <div>
 	<input (click)="onclick()" type="button" value="Change le nom">
-	<input (click)="Ajouter()" type="button" value="Ajout d'un joueur (changement de page)"  *ngIf="!isInAddingMode">
+	<input (click)="AjouterChangementDePage()" type="button" value="Ajout d'un joueur (changement de page)"  *ngIf="!isInAddingMode">
 	<input (click)="Ajouter()" type="button" value="Ajout d'un joueur"  *ngIf="!isInAddingMode">
 	<input (click)="AfficherDetail()" type="button" value="Afficher le détail"  *ngIf="!isInAddingMode">
 </div>
