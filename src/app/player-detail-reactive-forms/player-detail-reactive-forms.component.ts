@@ -26,6 +26,7 @@ export class PlayerDetailReactiveFormsComponent implements OnInit {
 
 
   showErrorMessage(control: AbstractControl, errorName:string){
+    debugger
     return control.touched && control.hasError(errorName);
   }
   onValidate(){
