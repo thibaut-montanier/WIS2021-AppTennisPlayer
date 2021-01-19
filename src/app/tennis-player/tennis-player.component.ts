@@ -36,8 +36,12 @@ export class TennisPlayerComponent implements OnInit {
     this.player.firstName="toto";
   }
 
-
   public Ajouter(){
+    //this._router.navigateByUrl('/add-player');
+    this.isInAddingMode =true;
+    this.player = new TennisPlayer();
+  }
+  public AjouterChangementDePage(){
     this._router.navigateByUrl('/add-player');
     // this.isInAddingMode =true;
     // this.player = new TennisPlayer();

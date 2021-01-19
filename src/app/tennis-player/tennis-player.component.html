@@ -3,10 +3,14 @@
 	<li *ngFor="let pl of players" (click)="selectPlayer(pl)">Mon joueur : {{pl.lastName}}</li>
 	<!-- {​​% for user in users %}​​<li>{​​{​​ user.username|e }​​}​​</li>{​​% endfor %}​​ -->
 </ul>
-<app-player-form [currentModifiedPlayer]="player" [isInAddingMode]="isInAddingMode" (jobFinished)="formHasFinished()"></app-player-form>
+<p>Avec un formulaire reactive forms</p>
+<app-player-detail-reactive-forms [activePlayer]="player"></app-player-detail-reactive-forms> 
+<p>Détail d'un joueur</p>
 <app-player-detail [activePlayer]="player"></app-player-detail>
 <div>
 	<input (click)="onclick()" type="button" value="Change le nom">
+	<input (click)="Ajouter()" type="button" value="Ajout d'un joueur (changement de page)"  *ngIf="!isInAddingMode">
 	<input (click)="Ajouter()" type="button" value="Ajout d'un joueur"  *ngIf="!isInAddingMode">
 	<input (click)="AfficherDetail()" type="button" value="Afficher le détail"  *ngIf="!isInAddingMode">
 </div>
+ 
