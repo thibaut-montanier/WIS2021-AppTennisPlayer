@@ -6,8 +6,8 @@
 <div>
 	<label>
 		<span [class.labelInvalid]="showErrorMessage(playerForm.controls.lastName, 'required')">Last name : </span>
-		<!-- <span [ngClass]="{'label-invalid':false}"​​​​>Last name : </span>  -->
-	
+		<span [ngClass]="{'label-invalid':false}">Last name : </span>
+	<span [ngClass]="{'label-invalid':showErrorMessage(playerForm.controls.lastName, 'required')}">Last name</span>
 	
 		<input type="text" formControlName="lastName"></label>
 	<div *ngIf="showErrorMessage(playerForm.controls.lastName, 'required')">Le nom doit obligatoirement être rempli</div>
